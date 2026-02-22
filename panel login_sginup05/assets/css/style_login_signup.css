@@ -1,0 +1,223 @@
+:root {
+  --primary: #301afa;
+  --text: #333;
+  --border: #e0e0e0;
+  --muted: #f9f9f9;
+}
+
+/* عمومی */
+body {
+  margin:0;
+  font-family:'Vazirmatn',sans-serif;
+  background:#fff;
+  color: var(--text);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+}
+
+.bg-layer {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: url('images/bg-login.jpg') center/cover no-repeat;
+  filter: blur(3px) brightness(0.7);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+.flow-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Progress bar */
+.progress-container {
+  display:flex;
+  justify-content: space-between;
+  margin:15px 0 25px;
+}
+
+.progress-step {
+  flex:1;
+  height:4px;
+  background: #e0e0e0;
+  margin:0 5px;
+  border-radius:2px;
+  transition: all 0.4s ease;
+}
+
+.progress-step.active {
+  background: var(--primary);
+}
+
+/* فرم‌ها */
+.step { 
+  display:none; 
+  flex-direction: column; 
+  gap:15px;
+  opacity:0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.step-active {
+  display:flex;
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* لوگو */
+.auth-logo img { width:100px; margin-bottom:15px; }
+
+/* ورودی‌ها */
+.form-group input {
+  padding:15px 12px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:1rem;
+  outline:none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(48,26,250,0.3);
+}
+
+/* دکمه‌ها */
+.btn-auth {
+  padding: 12px 0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  background: linear-gradient(135deg, #6a0dad, #301afa); /* گرادینت رنگی */
+  border: none;
+  box-shadow: 0 6px 15px rgba(48,26,250,0.3);
+}
+
+.btn-auth:hover:enabled {
+  background: linear-gradient(135deg, #301afa, #6a0dad);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(48,26,250,0.4);
+}
+
+.btn-auth:active:enabled {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(48,26,250,0.3);
+}
+
+.btn-auth:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #ccc;
+  box-shadow: none;
+}
+
+
+/* دکمه Social */
+.social-login {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:10px;
+}
+
+.btn-social {
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  font-weight:500;
+  transition: all 0.3s ease;
+  color:#fff;
+}
+
+.btn-social:hover { transform:scale(1.05); }
+
+/* OTP */
+.otp-group {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin:15px 0;
+}
+
+.otp-group input {
+  width:50px;
+  height:50px;
+  font-size:1.2rem;
+  text-align:center;
+  border-radius:10px;
+  border:1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.otp-group input:focus {
+  border-color: var(--primary);
+  box-shadow:0 0 8px rgba(48,26,250,0.3);
+}
+
+/* تایمر */
+#timer { font-weight:600; color: var(--primary); }
+
+/* موفقیت */
+.step-success h3 { color: var(--primary); }
+#resend {
+  padding: 10px 15px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+#resend:hover:enabled {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(48,26,250,0.3);
+}
+
+#resend:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-social.google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff; /* حالت عادی سفید */
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-social.google:hover {
+  background: #4285F4; /* رنگ اصلی لوگوی گوگل آبی */
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(66,133,244,0.4);
+  transform: scale(1.05);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+

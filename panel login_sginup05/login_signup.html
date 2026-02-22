@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود/ثبت نام</title>
+  <link rel="stylesheet" href="./assets/css/style_login_signup.css">
+  <link rel="icon" type="image/png" href="assets/images/WebArt1.png">
+</head>
+<body>
+  <!-- بک‌گراند پویا -->
+  <div class="bg-layer"></div>
+
+  <div class="flow-card">
+    <div class="auth-logo">
+      <img src="assets/images/WebArt.png" alt="Logo">
+      <h2>ورود به حساب کاربری</h2>
+    </div>
+
+    <!-- Step شماره موبایل -->
+    <form class="step step-phone step-active">
+      <div class="form-group">
+        <input type="text" id="phone" placeholder="شماره موبایل" maxlength="11">
+      </div>
+      <button type="submit" class="btn-auth" id="sendPhone" disabled>ارسال کد</button>
+      
+      <p class="switch-form">یا ورود با:</p>
+      <div class="social-login">
+        <button type="button" class="btn-social google">
+          <img src="assets/images/google.png" alt="Google" class="social-icon"> ورود با Google
+        </button>
+      </div>
+    </form>
+
+    <!-- Step OTP -->
+    <form class="step step-code">
+      <h3>کد ارسال شده را وارد کنید</h3>
+      <div class="otp-group">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+      </div>
+      <p id="timer">02:00</p>
+      <button type="submit" class="btn-auth" id="verifyOtp" disabled>تایید کد</button>
+      <button type="button" id="resend">ارسال دوباره</button>
+    </form>
+
+    <!-- Step موفقیت -->
+    <div class="step step-success">
+      <h3>ورود موفق!</h3>
+      <p>به حساب خود خوش آمدید</p>
+    </div>
+  </div>
+
+  <script src="./assets/js/script_login_signup.js"></script>
+</body>
+</html>
